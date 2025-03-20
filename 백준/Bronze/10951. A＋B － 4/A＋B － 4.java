@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
         while(true){
@@ -15,8 +15,9 @@ public class Main {
 
             int A = Integer.parseInt(st.nextToken());
             int B = Integer.parseInt(st.nextToken());
-            bw.write(A+B+"\n");
+            sb.append(A+B).append("\n");
         }
-        bw.flush(); bw.close(); br.close();
+        br.close();
+        System.out.println(sb);
     }
 }
