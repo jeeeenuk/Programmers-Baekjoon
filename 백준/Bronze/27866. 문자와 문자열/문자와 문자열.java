@@ -5,10 +5,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        String[] str = br.readLine().split("");
+        String str = br.readLine();
         int num = Integer.parseInt(br.readLine());
-
-        bw.write(str[num-1]);
+        bw.write(str.charAt(num-1));
         bw.flush(); bw.close(); br.close();
     }
 }
