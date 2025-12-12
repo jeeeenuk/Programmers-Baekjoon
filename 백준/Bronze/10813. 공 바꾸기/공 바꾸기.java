@@ -24,8 +24,8 @@ public class Main {
             bucketArr[a-1] = bucketArr[b-1];
             bucketArr[b-1] = num;
         }
-        for (Integer num : bucketArr) System.out.printf("%d ", num);
-        
+        for (Integer num : bucketArr) bw.write(num + " ");
+
         br.close();
         bw.flush();
         bw.close();
