@@ -4,18 +4,19 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
-        String[] str = br.readLine().split("");
-        int[] numArr = new int[26];
-        Arrays.fill(numArr, -1);
+        String str = br.readLine();
+        int[] arr = new int[26];
+        Arrays.fill(arr, -1);
 
-        for (int i = 0; i < str.length; i++) {
-            if (numArr[(int) str[i].charAt(0) - 97] == -1){
-                numArr[(int) str[i].charAt(0) - 97] = i;
-            }
+        for (int i = 0; i < str.length(); i++) {
+            int idx = str.charAt(i) - 'a';
+            if (arr[idx] == -1) arr[idx] = i;
         }
-        for (int num : numArr) bw.write(num + " ");
-        bw.flush(); bw.close(); br.close();
+
+        for (int num : arr) sb.append(num).append(" ");
+        System.out.println(sb);
+        br.close();
     }
 }
